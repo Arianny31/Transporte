@@ -1,0 +1,139 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-color: #e5f2fd;
+}
+
+/*menu principal*/
+.menuP {
+  height: 100px;
+  background-color: rgb(41, 39, 39);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 20px; 
+}
+
+.nombre {
+  /* Color principal para el texto que NO tiene el <span> (Time RD) */
+  color: #FFCA28; 
+  font-size: 2rem;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+/*ESTILOS ESPECÍFICOS DEL <span> (Para "Guagua")*/
+.guagua-color {
+  color: #1E88E5; /* Azul oscuro */
+}
+.menuP img {
+  height: 80px; 
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 85%; 
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Estilos para el diseño de cuadrícula dentro del formulario */
+.form-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 25px 30px; 
+}
+
+/* Para que los elementos de ancho completo ocupen las dos columnas */
+.form-grid-layout .full-width {
+  grid-column: span 2;
+}
+/* Estilos para las etiquetas (labels) */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"] {
+ 
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+input[type="text"]:focus{
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+/*checkbox*/
+.transporte{
+  display: inline-flex;
+}
+.transporte,
+input[type="checkbox"],
+label{
+  padding: 10px;
+  margin: 5px;
+}
+.efectos{
+  display: inline-flex;
+}
+.efectos,
+input[type="checkbox"],
+label{
+  padding: 10px;
+  margin: 5px;
+}
+.transporte, 
+.efectos,
+h3{
+  color: #FFCA28;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+/*Boton */
+button[type="submit"] {
+  width: 100%; 
+  padding: 15px;
+  background-color: #2B446A;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+footer{
+  height: 5em;
+  background-color: rgb(41, 39, 39);
+  display: grid;
+}
+footer a{
+  text-decoration: none;
+  font-size: 16px;
+  color:#ddd;
+  margin: 20px;
+  
+}
