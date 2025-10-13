@@ -142,17 +142,27 @@ button[type="submit"]:hover {
 }
 
 footer{
-  height: 5em;
+  height: 6em;
   background-color: rgb(41, 39, 39);
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  color: #007bff;
 }
-footer a{
-  text-decoration: none;
-  font-size: 16px;
-  color:#ddd;
-  margin: 20px;
-  
+footer p, footer ul {
+  margin-left: 20px;
 }
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+footer ul li {
+  display: inline;
+  margin-right: 15px;
+  text-align: center;
+  grid-column: span 2;
+}
+
 
 /* Estilos por defecto (modo claro) */
 body{
@@ -161,11 +171,9 @@ body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .menuP{
-  background-color: transparent;
+  background-color: #0c111a;
 }
-.navegacion input:focus {
-  background-color: #FFCA28;
-}
+
 .form-container{
   background-color: #ffffff;
   color: #131b2b;
