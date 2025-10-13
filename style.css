@@ -2,14 +2,15 @@
   padding: 0;
   margin: 0;
 }
-body{
+/*body{
   background-color: #e5f2fd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /*menu principal*/
 .menuP {
   height: 100px;
-  background-color: rgb(41, 39, 39);
+ /* background-color: #0c111a;  Azul oscuro */
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -17,14 +18,11 @@ body{
 }
 
 .nombre {
-  /* Color principal para el texto que NO tiene el <span> (Time RD) */
   color: #FFCA28; 
   font-size: 2rem;
   margin-left: 10px;
   display: inline-block;
 }
-
-/*ESTILOS ESPECÍFICOS DEL <span> (Para "Guagua")*/
 .guagua-color {
   color: #1E88E5; /* Azul oscuro */
 }
@@ -33,13 +31,31 @@ body{
   vertical-align: middle;
   border-radius: 50%;
 }
+.navegacion {
+  display: flex;
+  gap: 2px; 
+  position: relative;
+   left: 70%;
+  /*background-color: #ddd; */
+  border-radius: 8px;
+  width: 20%;
+} 
 
+.navegacion label img {
+  height: 30px; 
+  vertical-align: middle;
+  cursor: pointer;
+  justify-content: flex-end;
+}
+.navegacion input {
+  display: none;
+}
 .form-container {
   width: 100%;
   max-width: 85%; 
   margin: 40px auto;
   padding: 30px;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Roboto, sans-serif;
@@ -136,4 +152,37 @@ footer a{
   color:#ddd;
   margin: 20px;
   
+}
+
+/*estilos oscuro y claro*/
+body{
+  background-color: #131b2b; ;
+  color: #e0e0e0;
+}
+.menuP{
+  background-color: rgb(41, 39, 39);
+}
+.navegacion input:focus {
+  background-color: #FFCA28;
+}
+
+.form-container{
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+input[type="text"] {
+  background-color: #2e2e2e;
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
+input[type="text"]:focus{
+  border-color: #FFCA28;
+  box-shadow: 0 0 0 3px rgba(255, 202, 40, 0.25);
+}
+button[type="submit"] {
+  background-color: #FFCA28;
+  color: #131b2b;
+}
+button[type="submit"]:hover {
+  background-color: #e6b800;
 }
