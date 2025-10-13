@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
 }
-/*body{
+body{
   background-color: #e5f2fd;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -10,7 +10,7 @@
 /*menu principal*/
 .menuP {
   height: 100px;
- /* background-color: #0c111a;  Azul oscuro */
+  background-color: #0c111a;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -35,8 +35,8 @@
   display: flex;
   gap: 2px; 
   position: relative;
-   left: 70%;
-  /*background-color: #ddd; */
+  left: 70%;
+  background-color: #ddd;
   border-radius: 8px;
   width: 20%;
 } 
@@ -55,7 +55,7 @@
   max-width: 85%; 
   margin: 40px auto;
   padding: 30px;
-  /*background-color: #ffffff;*/
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Roboto, sans-serif;
@@ -154,35 +154,64 @@ footer a{
   
 }
 
-/*estilos oscuro y claro*/
+/* Estilos por defecto (modo claro) */
 body{
-  background-color: #131b2b; ;
-  color: #e0e0e0;
+  background-color: #e5f2fd;
+  color: #131b2b;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .menuP{
-  background-color: rgb(41, 39, 39);
+  background-color: transparent;
 }
 .navegacion input:focus {
   background-color: #FFCA28;
 }
-
 .form-container{
+  background-color: #ffffff;
+  color: #131b2b;
+}
+input[type="text"] {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+input[type="text"]:focus{
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+button[type="submit"] {
+  background-color: #2B446A;
+  color: #fff;
+}
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para modo oscuro - se activan con body.oscuro */
+body.oscuro{
+  background-color: #131b2b;
+  color: #e0e0e0;
+}
+body.oscuro .menuP{
+  background-color: rgb(41, 39, 39);
+}
+body.oscuro .form-container{
   background-color: #1e1e1e;
   color: #e0e0e0;
 }
-input[type="text"] {
+body.oscuro input[type="text"] {
   background-color: #2e2e2e;
   color: #e0e0e0;
   border: 1px solid #555;
 }
-input[type="text"]:focus{
+body.oscuro input[type="text"]:focus{
   border-color: #FFCA28;
   box-shadow: 0 0 0 3px rgba(255, 202, 40, 0.25);
 }
-button[type="submit"] {
+body.oscuro button[type="submit"] {
   background-color: #FFCA28;
   color: #131b2b;
 }
-button[type="submit"]:hover {
+body.oscuro button[type="submit"]:hover {
   background-color: #e6b800;
 }
