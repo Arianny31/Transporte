@@ -33,7 +33,50 @@
         <div class="form-container">
             <!--Formulario para recibir los datos-->
             <form action="" class="form-grid-layout">
+                
+                <div class="form-group full-width">
+                    <h3>Ruta Esquemática de Santo Domingo </h3>
+                    <p class="map-hint">Haz click en los círculos para seleccionar Origen y Destino.</p>
+                    <div id="mapa-container" style="margin-bottom: 20px;">
+                        <svg id="ruta-mapa" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+                            <g id="map-edges" stroke="var(--primary-color, #2B446A)" stroke-width="2" stroke-linecap="round"></g>
+                            <g id="map-nodes"></g>
+                            <g id="map-labels" font-family="Arial, sans-serif" font-size="10" fill="var(--text-color, #333)"></g>
+                        </svg>
+                    </div>
+                </div>
+
                 <div class="form-group">
+
+                    <h3>Ubicación actual (Origen)</h3>
+                    <select id="select-origen" name="origen">
+                        <option value="" disabled selected>Selecciona punto de inicio</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <h3>¿A dónde vas? (Destino)</h3>
+                    <select id="select-destino" name="destino">
+                        <option value="" disabled selected>Selecciona punto de destino</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width" id="distance-group-placeholder">
+                    </div>
+
+                      <!--Ver en que tipo de transpote publico ira-->
+                    <div class="form-group full-width">
+                    <h3>Tipo de transporte publico</h3>
+                    <div class="transporte">
+                        <input type="checkbox" name="Guagua" id="Guagua" checked>
+                        <label for="Guagua">Guagua</label>
+                        <input type="checkbox" name="carrito" id="carrito" checked>
+                        <label for="carrito">Carrito</label>
+                        <input type="checkbox" name="motoconcho" id="motoconcho" checked>
+                        <label for="motoconcho">Motoconcho</label>
+                        <input type="checkbox" name="uber" id="uber">
+                        <label for="uber">Uber</label>
+
                     <h3 id="where-title">¿A donde vas?</h3>
                     <input type="text" name="destino" id="destino">
                 </div>
@@ -54,11 +97,23 @@
                         <label for="motoconcho" id="motoconcho-label">Motoconcho</label>
                         <input type="checkbox" name="uber" id="uber">
                         <label for="uber" id="uber-label">Uber</label>
+
                     </div>
                 </div>
 
 
                 <!--Ver como esta el clima o si es hora pico-->
+
+                <div class="form-group full-width">
+                    <h3>Dificultad en el camino</h3>
+                    <div class="efectos">
+                        <input type="checkbox" name="lluvia" id="lluvia">
+                        <label for="lluvia">LLuvia</label>
+                        <input type="checkbox" name="paro" id="paro">
+                        <label for="paro">Paro vehicular</label>
+                        <input type="checkbox" name="horaPico" id="horaPico">
+                        <label for="horaPico">Hora Pico</label>
+
                  <div class="form-group full-width">
                     <h3 id="difficulty-title">Dificultad en el camino</h3>
                     <div class="efectos">
@@ -68,6 +123,7 @@
                         <label for="paro" id="paro-label">Paro vehicular</label>
                         <input type="checkbox" name="horaPico" id="horaPico">
                         <label for="horaPico" id="horaPico-label">Hora Pico</label>
+
                     </div>
                 </div>
                 <button type="submit" class="full-width" id="search-button">Buscar rutas</button>

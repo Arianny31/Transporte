@@ -1,51 +1,85 @@
-*{
-  padding: 0;
-  margin: 0;
+/* Variables CSS para facilitar el modo oscuro */
+:root {
+    --primary-color: #2B446A;
+    --secondary-color: #FFCA28;
+    --accent-color: #1E88E5;
+    --background-light: #e5f2fd;
+    --background-dark: #131b2b;
+    --text-light: #131b2b;
+    --text-dark: #e0e0e0;
+    --card-light: #ffffff;
+    --card-dark: #1e1e1e;
+    --border-light: #ddd;
+    --border-dark: #555;
+    --node-color: var(--primary-color);
+    --node-border: #fff;
+    --origin-color: green;
+    --dest-color: red;
+    --path-color: orange;
+    --text-color-secondary: #6b7280;
+    --map-bg: #f4f4f4;
+    --button-bg: #2B446A;
+    --button-color: #fff;
 }
-body{
-  background-color: #e5f2fd;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+/* Estilos globales */
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /*menu principal*/
 .menuP {
-  height: 100px;
-  background-color: #0c111a;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: 0 20px; 
+    height: 100px;
+    background-color: #0c111a;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 20px;
+    transition: background-color 0.3s;
 }
-
+.menuP > div {
+    display: flex;
+    align-items: center;
+}
 .nombre {
-  color: #FFCA28; 
-  font-size: 2rem;
-  margin-left: 10px;
-  display: inline-block;
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-left: 10px;
+    display: inline-block;
 }
 .guagua-color {
-  color: #1E88E5; /* Azul oscuro */
+    color: var(--accent-color);
 }
 .menuP img {
-  height: 80px; 
-  vertical-align: middle;
-  border-radius: 50%;
+    height: 80px;
+    vertical-align: middle;
+    border-radius: 50%;
 }
 .navegacion {
-  display: flex;
-  gap: 2px; 
-  position: relative;
-  left: 70%;
-  background-color: #ddd;
-  border-radius: 8px;
-  width: 20%;
-} 
-
+    display: flex;
+    gap: 2px;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #ddd;
+    border-radius: 8px;
+    width: fit-content;
+    margin-left: auto; /* Mover a la derecha */
+}
+.navegacion label {
+    padding: 5px;
+    line-height: 0;
+}
 .navegacion label img {
-  height: 30px; 
-  vertical-align: middle;
-  cursor: pointer;
-  justify-content: flex-end;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 0;
 }
 #language-selector {
   padding: 5px;
@@ -61,82 +95,166 @@ body.oscuro #language-selector {
   border-color: #555;
 }
 .navegacion input {
-  display: none;
+    display: none;
 }
+.navegacion input:checked + label {
+    background-color: #aaa;
+    border-radius: 8px;
+}
+
 .form-container {
-  width: 100%;
-  max-width: 85%; 
-  margin: 40px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', Roboto, sans-serif;
+    width: 100%;
+    max-width: 85%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--card-light);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Estilos para el diseño de cuadrícula dentro del formulario */
 .form-grid-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 25px 30px; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 30px;
 }
 
 /* Para que los elementos de ancho completo ocupen las dos columnas */
 .form-grid-layout .full-width {
-  grid-column: span 2;
+    grid-column: span 2;
 }
+
 /* Estilos para las etiquetas (labels) */
+h3 {
+    color: var(--primary-color);
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    transition: color 0.3s;
+}
 label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #555;
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color-secondary);
 }
 
 /* Estilos para los campos de entrada */
-input[type="text"] {
- 
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
-  color: #333;
-  box-sizing: border-box;
-  transition: border-color 0.3s, box-shadow 0.3s;
+input[type="text"], 
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-size: 16px;
+    color: var(--text-light);
+    background-color: var(--card-light);
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
 }
-input[type="text"]:focus{
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.25);
 }
+input[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 /*checkbox*/
-.transporte{
-  display: inline-flex;
+.transporte, .efectos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-.transporte,
-input[type="checkbox"],
-label{
-  padding: 10px;
-  margin: 5px;
+.transporte input[type="checkbox"], 
+.efectos input[type="checkbox"] {
+    display: none;
 }
-.efectos{
-  display: inline-flex;
+.transporte label, 
+.efectos label {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 0;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    background-color: var(--card-light);
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: normal;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
-.efectos,
-input[type="checkbox"],
-label{
-  padding: 10px;
-  margin: 5px;
-}
-.transporte, 
-.efectos,
-h3{
-  color: #FFCA28;
-  font-size: 1.1em;
-  margin-bottom: 5px;
+.transporte input[type="checkbox"]:checked + label,
+.efectos input[type="checkbox"]:checked + label {
+    background-color: var(--primary-color);
+    color: #fff;
 }
 /*Boton */
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s;
+}
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Siempre un azul más oscuro en modo claro */
+}
+
+/* SVG Map Styles */
+#ruta-mapa {
+  max-height: 450px; /* Reducido de 500px a 350px de altura visible máx. */
+    width: 100%;
+    height: auto;
+    
+    background-color: var(--map-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+.map-node {
+    cursor: pointer;
+    transition: fill 0.2s, r 0.2s;
+}
+.map-node:hover {
+    fill: var(--accent-color);
+}
+.map-edge {
+    transition: stroke 0.3s, stroke-width 0.3s;
+}
+.map-label {
+    fill: var(--text-light);
+    pointer-events: none; /* Ignorar clicks para que afecten al círculo */
+}
+.map-hint {
+    color: var(--text-color-secondary);
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    height: 6em;
+    background-color: rgb(41, 39, 39);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    color: #007bff;
+    margin-top: 40px;
+
 button[type="submit"], #save-route {
   width: 100%; 
   padding: 15px;
@@ -294,78 +412,67 @@ footer{
   grid-template-columns: 1fr 1fr;
   align-items: center;
   color: #007bff;
+
 }
 footer p, footer ul {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 footer ul {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
 footer ul li {
-  display: inline;
-  margin-right: 15px;
-  text-align: center;
-  grid-column: span 2;
-}
-
-
-/* Estilos por defecto (modo claro) */
-body{
-  background-color: #e5f2fd;
-  color: #131b2b;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.menuP{
-  background-color: #0c111a;
-}
-
-.form-container{
-  background-color: #ffffff;
-  color: #131b2b;
-}
-input[type="text"] {
-  background-color: #fff;
-  color: #333;
-  border: 1px solid #ddd;
-}
-input[type="text"]:focus{
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-}
-button[type="submit"] {
-  background-color: #2B446A;
-  color: #fff;
-}
-button[type="submit"]:hover {
-  background-color: #0056b3;
+    display: inline;
+    margin-right: 15px;
+    text-align: center;
 }
 
 /* Estilos para modo oscuro - se activan con body.oscuro */
-body.oscuro{
-  background-color: #131b2b;
-  color: #e0e0e0;
+body.oscuro {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
 }
-body.oscuro .menuP{
-  background-color: rgb(41, 39, 39);
+body.oscuro .menuP {
+    background-color: rgb(41, 39, 39);
 }
-body.oscuro .form-container{
-  background-color: #1e1e1e;
-  color: #e0e0e0;
+body.oscuro h3 {
+    color: var(--secondary-color);
 }
-body.oscuro input[type="text"] {
-  background-color: #2e2e2e;
-  color: #e0e0e0;
-  border: 1px solid #555;
+body.oscuro .form-container {
+    background-color: var(--card-dark);
+    color: var(--text-dark);
 }
-body.oscuro input[type="text"]:focus{
-  border-color: #FFCA28;
-  box-shadow: 0 0 0 3px rgba(255, 202, 40, 0.25);
+body.oscuro input[type="text"],
+body.oscuro input[type="number"],
+body.oscuro select {
+    background-color: #2e2e2e;
+    color: var(--text-dark);
+    border: 1px solid var(--border-dark);
+}
+body.oscuro input[type="text"]:focus,
+body.oscuro input[type="number"]:focus,
+body.oscuro select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(255, 202, 40, 0.25);
 }
 body.oscuro button[type="submit"] {
-  background-color: #FFCA28;
-  color: #131b2b;
+    background-color: var(--secondary-color);
+    color: var(--background-dark);
 }
 body.oscuro button[type="submit"]:hover {
-  background-color: #e6b800;
+    background-color: #e6b800;
+}
+body.oscuro .transporte label, 
+body.oscuro .efectos label {
+    border-color: var(--secondary-color);
+    background-color: var(--card-dark);
+    color: var(--secondary-color);
+}
+body.oscuro .transporte input[type="checkbox"]:checked + label,
+body.oscuro .efectos input[type="checkbox"]:checked + label {
+    background-color: var(--secondary-color);
+    color: var(--background-dark);
+}
+body.oscuro .map-label {
+    fill: var(--text-dark);
 }
