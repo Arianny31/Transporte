@@ -20,6 +20,12 @@
             <input type="radio" name="theme" id="oscuro" value="oscuro">
             <label for="claro"> <img src="./assets/Sol.png" alt=""> </label>
             <input type="radio" name="theme" id="claro" value="claro" checked>
+            
+            <!-- Selector de idioma -->
+            <select id="language-selector">
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+            </select>
         </nav>
     </header>
 
@@ -41,6 +47,7 @@
                 </div>
 
                 <div class="form-group">
+
                     <h3>Ubicación actual (Origen)</h3>
                     <select id="select-origen" name="origen">
                         <option value="" disabled selected>Selecciona punto de inicio</option>
@@ -69,11 +76,34 @@
                         <label for="motoconcho">Motoconcho</label>
                         <input type="checkbox" name="uber" id="uber">
                         <label for="uber">Uber</label>
+
+                    <h3 id="where-title">¿A donde vas?</h3>
+                    <input type="text" name="destino" id="destino">
+                </div>
+
+                <div class="form-group">
+                    <h3 id="location-title">Ubicación actual</h3>
+                    <input type="text" name="ubicacion" id="ubicacion">
+                </div>
+                <!--Ver en que tipo de transpote publico ira-->
+                <div class="form-group full-width">
+                    <h3 id="transport-title">Tipo de transporte publico</h3>
+                    <div class="transporte">
+                        <input type="checkbox" name="Guagua" id="Guagua">
+                        <label for="Guagua" id="guagua-label">Guagua</label>
+                        <input type="checkbox" name="carrito" id="carrito">
+                        <label for="carrito" id="carrito-label">Carrito</label>
+                        <input type="checkbox" name="motoconcho" id="motoconcho">
+                        <label for="motoconcho" id="motoconcho-label">Motoconcho</label>
+                        <input type="checkbox" name="uber" id="uber">
+                        <label for="uber" id="uber-label">Uber</label>
+
                     </div>
                 </div>
 
 
                 <!--Ver como esta el clima o si es hora pico-->
+
                 <div class="form-group full-width">
                     <h3>Dificultad en el camino</h3>
                     <div class="efectos">
@@ -83,15 +113,39 @@
                         <label for="paro">Paro vehicular</label>
                         <input type="checkbox" name="horaPico" id="horaPico">
                         <label for="horaPico">Hora Pico</label>
+
+                 <div class="form-group full-width">
+                    <h3 id="difficulty-title">Dificultad en el camino</h3>
+                    <div class="efectos">
+                        <input type="checkbox" name="lluvia" id="lluvia">
+                        <label for="lluvia" id="lluvia-label">LLuvia</label>
+                        <input type="checkbox" name="paro" id="paro">
+                        <label for="paro" id="paro-label">Paro vehicular</label>
+                        <input type="checkbox" name="horaPico" id="horaPico">
+                        <label for="horaPico" id="horaPico-label">Hora Pico</label>
+
                     </div>
                 </div>
-                <button type="submit" class="full-width">Buscar rutas</button>
+                <button type="submit" class="full-width" id="search-button">Buscar rutas</button>
+                <button type="button" id="save-route" class="full-width">Guardar ruta</button>
             </form>
+        </div>
+
+        <!-- Sección para visualizar rutas guardadas -->
+        <div class="form-container" id="saved-routes-container">
+            <h2 id="saved-routes-title">Rutas Guardadas</h2>
+            <div id="saved-routes-list">
+                <!-- Las rutas se cargarán aquí dinámicamente -->
+            </div>
+            <div class="routes-actions">
+                <button type="button" id="clear-all-routes" class="danger-button">Eliminar Todas las Rutas</button>
+                <button type="button" id="export-all-routes">Exportar Todas las Rutas</button>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 GuaguaTime RD. Todos los derechos reservados.</p>
+        <p id="footer-text">&copy; 2025 GuaguaTime RD. Todos los derechos reservados.</p>
         <ul>
             <li>Gabriel Carela-1006119254</li>
             <li>Arianny Rossis-100656669</li>
